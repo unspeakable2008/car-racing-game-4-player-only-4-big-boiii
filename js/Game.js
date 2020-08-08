@@ -71,6 +71,10 @@ class Game {
 
         if (index === player.index){
           cars[index - 1].shapeColor = "red";
+          stroke (10)
+          fill("red")
+          ellipse(x,y,60,60)
+          text(player.name,x,y+60);
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y;
         }
@@ -88,6 +92,9 @@ class Game {
 
     if(player.distance > 3860){
       gameState = 2;
+      stroke(20)
+      fill("green")
+      text(player.name + " WINS",displayWidth/2 -50, y-200)
     }
    
     drawSprites();
